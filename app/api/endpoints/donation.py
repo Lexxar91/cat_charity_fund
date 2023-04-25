@@ -19,7 +19,8 @@ router = APIRouter()
     response_model_exclude_none=True
 )
 async def get_all_donation(session: AsyncSession = Depends(get_async_session)) -> List[DonationDB]:
-    """Получение всех пожертвований.
+    """
+    Получение всех пожертвований.
     Args:
         session: Сессия базы данных.
     Returns:
@@ -39,7 +40,8 @@ async def create_donation(
         session: AsyncSession = Depends(get_async_session),
         user: User = Depends(current_user)
 ) -> DonationUser:
-    """Создание нового пожертвования.
+    """
+    Создание нового пожертвования.
     Args:
         donation_create (DonationCreate): Информация о новом пожертвовании.
         session (AsyncSession, optional): Сессия базы данных. По умолчанию `Depends(get_async_session)`.
@@ -61,7 +63,8 @@ async def get_my_donation(
         session: AsyncSession = Depends(get_async_session),
         user: User = Depends(current_user)
 ) -> List[DonationUser]:
-    """Получение всех пожертвований, сделанных текущим пользователем.
+    """
+    Получение всех пожертвований, сделанных текущим пользователем.
     Args:
         session: Сессия базы данных.
         user (User, optional): Текущий пользователь. По умолчанию `Depends(current_user)`.

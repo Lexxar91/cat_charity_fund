@@ -1,3 +1,3 @@
-from .user import User
-from .charityproject import CharityProject
-from .donation import Donation
+from .user import User # noqa
+from .charityproject import CharityProject # noqa
+from .donation import Donation # noqa

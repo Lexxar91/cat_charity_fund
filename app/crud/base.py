@@ -18,6 +18,7 @@ class CRUDBase:
     db_obj, obj_in, session: AsyncSession) -> model: обновляет данные объекта в базе данных на основе переданных
     данных - delete(db_obj, session: AsyncSession) -> model: удаляет объект из базы данных
     """
+
     def __init__(self, model):
         self.model = model
 
@@ -75,10 +76,3 @@ class CRUDBase:
         await session.delete(db_obj)
         await session.commit()
         return db_obj
-
-
-
-
-
-
-

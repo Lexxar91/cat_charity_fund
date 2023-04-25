@@ -91,4 +91,3 @@ class CharityUpdate(CharityBase):
     Наследует атрибуты из класса `CharityBase`.
     """
     pass
-

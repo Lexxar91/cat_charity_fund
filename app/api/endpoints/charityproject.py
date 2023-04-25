@@ -20,7 +20,8 @@ router = APIRouter()
     response_model_exclude_none=True
 )
 async def get_all_charity_projects(session: AsyncSession = Depends(get_async_session)) -> List[CharityDB]:
-    """Получает список всех благотворительных проектов из базы данных.
+    """
+    Получает список всех благотворительных проектов из базы данных.
     Args:
         session (AsyncSession, optional): Сессия базы данных. Defaults to Depends(get_async_session).
     Returns:
@@ -40,7 +41,8 @@ async def create_charity_project(
         charity_project: CharityCreate,
         session: AsyncSession = Depends(get_async_session),
 ) -> CharityDB:
-    """Создает новый благотворительный проект в базе данных.
+    """
+    Создает новый благотворительный проект в базе данных.
     Args:
         charity_project (CharityCreate): Объект создаваемого благотворительного проекта.
         session (AsyncSession, optional): Сессия базы данных. Defaults to Depends(get_async_session).
@@ -66,7 +68,8 @@ async def delete_charity_project(
         project_id: int,
         session: AsyncSession = Depends(get_async_session)
 ) -> CharityDB:
-    """Удаляет благотворительный проект из базы данных.
+    """
+    Удаляет благотворительный проект из базы данных.
     Args:
         project_id (int): Идентификатор удаляемого благотворительного проекта.
         session (AsyncSession, optional): Сессия базы данных. Defaults to Depends(get_async_session).
@@ -90,7 +93,8 @@ async def update_charity_project(
         obj_in: CharityUpdate,
         session: AsyncSession = Depends(get_async_session),
 ) -> CharityDB:
-    """Обновляет информацию о благотворительном проекте в базе данных.
+    """
+    Обновляет информацию о благотворительном проекте в базе данных.
     Args:
         project_id (int): Идентификатор благотворительного проекта для обновления.
         obj_in (CharityUpdate): Объект с информацией для обновления благотворительного проекта.

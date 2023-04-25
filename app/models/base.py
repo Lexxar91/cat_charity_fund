@@ -15,4 +15,3 @@ class AbstractCharityAndDonation(Base):
     fully_invested = Column(Boolean, nullable=False, default=False)
     create_date = Column(DateTime, nullable=False, default=datetime.utcnow)
     close_date = Column(DateTime)
-

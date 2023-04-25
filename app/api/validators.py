@@ -7,12 +7,20 @@ from sqlalchemy.ext.asyncio import AsyncSession
 
 class ValidatorsClass:
     """
-    Класс, содержащий методы-валидаторы для проверки корректности входных данных при работе с благотворительными
-    проектами. Методы: - check_charity_project_exists: проверяет существование благотворительного проекта с заданным
-    идентификатором. - check_name_duplicate: проверяет отсутствие проекта с заданным именем в базе данных. -
-    check_invested_amount_in_project: проверяет отсутствие вложенных средств в благотворительном проекте. -
-    count_sum_in_invested_amount: проверяет, что устанавливаемая сумма вложений больше или равна уже имеющейся в
-    проекте. - check_charity_project_closed: проверяет, что проект еще не закрыт и может быть изменен.
+    Класс, содержащий методы-валидаторы для проверки корректности входных данных
+    при работе с благотворительными проектами.
+    Методы:
+    check_charity_project_exists:
+        проверяет существование благотворительного проекта с заданным идентификатором.
+    check_name_duplicate:
+        проверяет отсутствие проекта с заданным именем в базе данных.
+    check_invested_amount_in_project:
+        проверяет отсутствие вложенных средств в благотворительном проекте.
+    count_sum_in_invested_amount:
+        проверяет, что устанавливаемая сумма вложений больше или равна уже имеющейся в
+    проекте.
+    check_charity_project_closed:
+        проверяет, что проект еще не закрыт и может быть изменен.
     """
     @staticmethod
     async def check_charity_project_exists(
@@ -29,9 +37,9 @@ class ValidatorsClass:
 
     @staticmethod
     async def check_name_duplicate(
-            charity_name: str,
-            session: AsyncSession
-):
+        charity_name: str,
+        session: AsyncSession
+    ):
         charity_project_name = await charity_crud.get_charity_id_by_name(charity_name, session)
         if charity_project_name is not None:
             raise HTTPException(
@@ -66,5 +74,3 @@ class ValidatorsClass:
                 status_code=400,
                 detail='Закрытый проект нельзя редактировать!'
             )
-
-

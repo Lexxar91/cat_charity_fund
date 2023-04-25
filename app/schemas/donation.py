@@ -62,8 +62,3 @@ class DonationDB(DonationCreate):
 
     class Config:
         orm_mode = True
-
-
-
-
-
