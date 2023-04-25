@@ -3,9 +3,9 @@ from typing import List
 from app.api.validators import ValidatorsClass
 from app.core.db import get_async_session
 from app.core.user import current_superuser
-from app.crud.charityproject import charity_crud
+from app.crud.charity_project import charity_crud
 from app.models import Donation
-from app.schemas.charityproject import CharityCreate, CharityDB, CharityUpdate
+from app.schemas.charity_project import CharityCreate, CharityDB, CharityUpdate
 from app.services.investing import investing_process
 
 from fastapi import APIRouter, Depends
@@ -61,7 +61,6 @@ async def create_charity_project(
 @router.delete(
     '/{project_id}',
     response_model=CharityDB,
-    response_model_exclude_none=True,
     dependencies=[Depends(current_superuser)]
 )
 async def delete_charity_project(
@@ -85,7 +84,6 @@ async def delete_charity_project(
 @router.patch(
     '/{project_id}',
     response_model=CharityDB,
-    response_model_exclude_none=True,
     dependencies=[Depends(current_superuser)]
 )
 async def update_charity_project(

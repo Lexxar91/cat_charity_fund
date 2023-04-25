@@ -1,4 +1,4 @@
-from app.crud.charityproject import charity_crud
+from app.crud.charity_project import charity_crud
 from app.models import CharityProject
 
 from fastapi import HTTPException
@@ -43,8 +43,8 @@ class ValidatorsClass:
         charity_project_name = await charity_crud.get_charity_id_by_name(charity_name, session)
         if charity_project_name is not None:
             raise HTTPException(
-                status_code=422,
-                detail='Благотворительный проект с таким именем уже существует!',
+                status_code=400,
+                detail='Проект с таким именем уже существует!',
             )
         return None
 
@@ -53,7 +53,7 @@ class ValidatorsClass:
         if charity_project.invested_amount > 0:
             raise HTTPException(
                 status_code=400,
-                detail='В благотворительный проект уже были внесены средства!'
+                detail='В проект были внесены средства, не подлежит удалению!'
             )
 
     @staticmethod
