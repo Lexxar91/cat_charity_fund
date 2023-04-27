@@ -1,7 +1,7 @@
 from datetime import datetime
 from typing import Optional
 
-from pydantic import BaseModel, Field, PositiveInt
+from pydantic import BaseModel, Field, PositiveInt, Extra
 
 
 class DonationCreate(BaseModel):
@@ -14,8 +14,11 @@ class DonationCreate(BaseModel):
         comment : Optional[str], необязательный
             Комментарий к пожертвованию.
     """
-    full_amount: PositiveInt = Field(...)
+    full_amount: PositiveInt
     comment: Optional[str]
+
+    class Config:
+        extra = Extra.forbid
 
 
 class DonationUser(DonationCreate):

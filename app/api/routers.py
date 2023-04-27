@@ -9,11 +9,11 @@ main_router.include_router(user_router)
 main_router.include_router(
     charity_router,
     prefix='/charity_project',
-    tags=['Charity Project']
+    tags=['charity_project']
 )
 
 main_router.include_router(
     donation_router,
     prefix='/donation',
-    tags=['Donation']
+    tags=['donation']
 )

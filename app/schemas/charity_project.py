@@ -23,8 +23,8 @@ class CharityBase(BaseModel):
             Минимальная длина для строковых полей.
     """
     name: Optional[str] = Field(None, max_length=100)
-    description: Optional[str] = Field(None)
-    full_amount: Optional[PositiveInt] = Field(None)
+    description: Optional[str]
+    full_amount: Optional[PositiveInt]
 
     class Config:
         extra = Extra.forbid
@@ -48,8 +48,8 @@ class CharityCreate(BaseModel):
             Минимальная длина для строковых полей.
     """
     name: str = Field(..., max_length=100)
-    description: str = Field(...)
-    full_amount: PositiveInt = Field(...)
+    description: str
+    full_amount: PositiveInt
 
     class Config:
         min_anystr_length = 1

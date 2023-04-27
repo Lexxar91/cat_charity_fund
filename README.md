@@ -19,8 +19,7 @@
       </ul>
     </li>
     <li><a href="#-использование">Использование</a></li>
-    <li><a href="#автор-проекта-ilya-petrukhin">Автор проекта</a></li>
-  </ul>
+   </ul>
 </details>
 
 <a name="описание"></a>
@@ -44,7 +43,7 @@
 [![FastAPI][FastAPI-badge]][FastAPI-url]
 [![FastAPIUsers][FastAPIUsers-badge]][FastAPIUsers-url]
 [![SQLAlchemy][SQLAlchemy-badge]][SQLAlchemy-url]
-[![pre-commit][pre-commit-badge]][pre-commit-url]
+
 
 ## ⚙ Начало Работы
 
@@ -112,7 +111,3 @@
 [SQLAlchemy-badge]: https://img.shields.io/badge/sqlalchemy-fbfbfb?style=for-the-badge
 
 [SQLAlchemy-url]: https://www.sqlalchemy.org/
-
-[pre-commit-badge]: https://img.shields.io/badge/pre--commit-1f2d23?style=for-the-badge&logo=pre-commit&logoColor=FAB040
-
-[pre-commit-url]: https://pre-commit.com/
