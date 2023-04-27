@@ -59,7 +59,6 @@
 
    ```shell
    git clone https://github.com/Lexxar91/cat_charity_fund
-   cd QRKot
    ```
 
 ### Локальный Запуск (Development)
